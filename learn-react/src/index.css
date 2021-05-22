@@ -1,13 +1,76 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: inherit;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  padding: 2rem;
+}
+h3 {
+  font-size: 3.2rem;
+}
+h5 {
+  font-size: 2.4rem;
+}
+p {
+  font-size: 1.6rem;
+}
+header {
+  max-width: 114rem;
+}
+nav {
+  width: inherit;
+  height: 7.5rem;
+  background-color: #333;
+  position: relative;
+}
+.logo-box, .menu {
+  position: absolute;
+}
+.logo-box {
+  top: 2rem;
+  left: 4rem;
+  width: 15rem;
+}
+.logo-box .logo-box__text {
+  width: inherit;
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+.menu {
+  top: 2rem;
+  right: 8rem;
+  list-style: none;
+}
+.menu__list {
+  display: inline-block;
+}
+.menu__list__link {
+  text-decoration: none;
+  color: #eee;
+  padding: .1rem 1.4rem;
+  /* width: 6rem; */
+  font-size: 2.4rem;
+  text-align: center;
+  height: 4rem;
+}
+.active {
+  background-color: blue;
+}
+.greeting {
+  font-size: 2.4rem;
+  padding: 3rem 5rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-family: monospace;
+  text-align: center;
+  margin: 0 auto;
+  letter-spacing: .2rem;
 }
