@@ -5,15 +5,14 @@ class Greeting extends Component {
     const date = new Date();
     const hours = date.getHours();
     let timeOfDay;
-    let name = 'Tolu';
+    let name = "BoSs";
 
-    if (hours < 12) {
-      timeOfDay = "Morning";
-    } else if (hours > 12 && hours < 16) {
-      timeOfDay = "Afternoon";
-    } else {
-      timeOfDay = "Evening";
-    }
+    hours < 12
+      ? (timeOfDay = "Morning")
+      : hours > 12 && hours <= 16
+      ? (timeOfDay = "Afternoon")
+      : (timeOfDay = "Evening");
+      
     return (
       <div>
         <div>
