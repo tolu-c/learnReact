@@ -11,7 +11,8 @@ import Messages from "./learning/Messages";
 import Logged from "./learning/Logged";
 import Blah from "./learning/Blah";
 // import Form from "./learning/Form";
-import FormII from "./learning/FormII";
+// import FormII from "./learning/FormII";
+import MemeII from "./learning/Meme";
 
 import React, { Component } from "react";
 
@@ -47,8 +48,8 @@ export default class App extends Component {
         <Messages />
         <Logged />
         <Blah />
-        <FormII />
-        {/* <Form /> */}
+        {/* <FormII /> */}
+        <MemeII />
       </div>
     );
   }
