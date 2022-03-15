@@ -5,15 +5,6 @@ import { useState } from "react";
 function ExpenseItem({ filteredYear }) {
   let [title, setTitle] = useState();
 
-  function handleClick(e) {
-    e.preventDefault();
-    setTitle("Updated");
-    // console.log("button clicked");
-    // console.log(expenses.map((expense) => expense.date.getFullYear()));
-    // console.log(filteredYear)
-  }
-
-
   return (
     <div>
       {expenses

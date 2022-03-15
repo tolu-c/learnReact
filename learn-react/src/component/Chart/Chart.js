@@ -5,7 +5,7 @@ function Chart(props) {
   const totalMax = Math.max(...dataPointsValues);
 
   return (
-    <div>
+    <div className='flex'>
       {props.dataPoints.map((dataPoint) => (
         <ChartBar
           value={dataPoint.value}
