@@ -27,7 +27,7 @@ function NewExpense(props) {
       {!isEditing && (
         <button
           onClick={startEditing}
-          className="w-3/4 text-2xl bg-blue-700 p-4 text-white font-bold capitalize rounded-2xl shadown-md shadow-blue-400 hover:shadow-2xl"
+          className="w-full text-2xl bg-blue-700 p-4 text-white font-bold capitalize rounded-2xl shadown-md shadow-blue-400 hover:shadow-2xl"
         >
           Add New Expense
         </button>

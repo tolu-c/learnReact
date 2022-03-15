@@ -71,7 +71,7 @@ function ExpenseForm(props) {
       <div className="basis-full flex justify-center">
         <button
           type="button"
-          className="capitalize bg-red-700 hover:bg-red-800 text-white font-bold w-3/4"
+          className="capitalize bg-red-700 hover:bg-red-800 text-white font-bold w-1/2 rounded-lg text-lg"
           onClick={props.onStopEdit}
         >
           cancel
