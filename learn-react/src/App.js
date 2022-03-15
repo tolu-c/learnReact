@@ -25,7 +25,7 @@ function App() {
       <NewExpense onAddedExpense={addExpenseData} />
       <div className="container p-4 mx-auto my-12 bg-gray-200">
         <ExpenseFilter onSaveExpenseFilterYear={addExpenseFilterYear} />
-        <ExpenseItem />
+        <ExpenseItem filteredYear={filteredYear} />
       </div>
     </div>
   );

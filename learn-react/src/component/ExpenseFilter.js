@@ -4,6 +4,7 @@ function ExpenseFilter(props) {
     let selectedYear = e.target.value;
     props.onSaveExpenseFilterYear(selectedYear);
   }
+  
   return (
     <div className="my-4 border bg-gray-400 text-gray-800 p-6 flex justify-end">
       <div className="flex space-x-2">
