@@ -10,8 +10,8 @@ function ExpenseForm(props) {
 
     let data = {
       titleEntered: title,
-      amountEntered: amount,
-      dateEntered: date,
+      amountEntered: +amount,
+      dateEntered: new Date(date),
     };
     // console.log(data);
     // passing data to parent component
