@@ -3,6 +3,7 @@ import ExpenseItem from "./component/ExpenseItem";
 import NewExpense from "./component/NewExpense/NewExpense";
 import ExpenseFilter from './component/ExpenseFilter'
 import { useState } from "react";
+import ExpensesChart from "./component/NewExpense/ExpensesChart";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <NewExpense onAddedExpense={addExpenseData} />
       <div className="container p-4 mx-auto my-12 bg-gray-200">
         <ExpenseFilter onSaveExpenseFilterYear={addExpenseFilterYear} />
+        <ExpensesChart expenses={} />
         <ExpenseItem filteredYear={filteredYear} />
       </div>
     </div>
