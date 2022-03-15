@@ -12,6 +12,7 @@ function NewExpense(props) {
     // console.log(expenseData);
     // passing data to parent component => app
     props.onAddedExpense(expenseData);
+    setIsEditing(false)
   };
 
   function startEditing() {
