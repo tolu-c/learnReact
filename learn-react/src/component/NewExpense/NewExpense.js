@@ -3,6 +3,7 @@ import { useState } from "react";
 
 function NewExpense(props) {
   const [isEditing, setIsEditing] = useState(false);
+
   const saveExpenseData = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
@@ -17,6 +18,10 @@ function NewExpense(props) {
     setIsEditing(true);
   }
 
+  function stopEditing() {
+    setIsEditing(false);
+  }
+
   return (
     <div className="bg-blue-400 p-6">
       {!isEditing && (
@@ -27,7 +32,7 @@ function NewExpense(props) {
           Add New Expense
         </button>
       )}
-      {isEditing && <ExpenseForm onSaveExpenseData={saveExpenseData} />}
+      {isEditing && <ExpenseForm onSaveExpenseData={saveExpenseData} onStopEdit={stopEditing} />}
     </div>
   );
 }
