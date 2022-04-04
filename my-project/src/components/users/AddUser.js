@@ -1,19 +1,24 @@
 import Button from "../ui/Button";
 import Card from "../ui/Card";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import ErrorModal from "../ui/ErrorModal";
-import Wrapper from '../helpers/Wrapper'
+import Wrapper from "../helpers/Wrapper";
 
 function AddUser(props) {
-  const [enteredUsername, setEnteredUsername] = useState("");
-  const [enteredAge, setEnteredAge] = useState("");
+  const usernameInputRef = useRef();
+  const ageInputRef = useRef();
+
   const [error, setError] = useState();
 
   function addUser(event) {
     event.preventDefault();
+
+    const enteredName = usernameInputRef.current.value;
+    const enteredUserAge = ageInputRef.current.value;
+
     if (
-      enteredUsername.trim().length === 0 ||
-      !enteredAge.trim().length === 0
+      enteredName.trim().length === 0 ||
+      !enteredUserAge.trim().length === 0
     ) {
       setError({
         title: "invalid input!",
@@ -21,7 +26,7 @@ function AddUser(props) {
       });
       return;
     }
-    if (+enteredAge < 1) {
+    if (+enteredUserAge < 1) {
       setError({
         title: "invalid age!",
         message: "please, enter a valid age! (> 0)",
@@ -30,17 +35,9 @@ function AddUser(props) {
     }
 
     console.log("submitted");
-    props.onAddUser(enteredUsername, enteredAge);
-    setEnteredUsername("");
-    setEnteredAge("");
-  }
-
-  function usernameChangeHandler(event) {
-    setEnteredUsername(event.target.value);
-  }
-
-  function ageChangeHandler(event) {
-    setEnteredAge(event.target.value);
+    props.onAddUser(enteredName, enteredUserAge);
+    usernameInputRef.current.value = "";
+    ageInputRef.current.value = "";
   }
 
   function errorHandler() {
@@ -71,9 +68,8 @@ function AddUser(props) {
             <input
               type="text"
               id="username"
+              ref={usernameInputRef}
               name="username"
-              value={enteredUsername}
-              onChange={usernameChangeHandler}
               className="text-base text-gray-600 focus:border-gray-600 focus:ring-gray-600 invalid:text-red-500 invalid:border-red-500 focus:invalid:border-red-500 focus:invalid:ring-red-500 invalid:bg-red-200"
             />
           </div>
@@ -88,9 +84,8 @@ function AddUser(props) {
             <input
               type="number"
               id="age"
-              onChange={ageChangeHandler}
+              ref={ageInputRef}
               name="age"
-              value={enteredAge}
               className="text-base text-gray-600 focus:border-gray-600 focus:ring-gray-600 invalid:text-red-500 invalid:border-red-500 focus:invalid:border-red-500 focus:invalid:ring-red-500 invalid:bg-red-200"
             />
           </div>
