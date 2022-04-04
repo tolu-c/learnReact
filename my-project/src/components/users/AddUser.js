@@ -14,9 +14,9 @@ function AddUser(props) {
     if (+enteredAge < 1) {
         return
     }
-    
+
     console.log("submitted");
-    console.log(enteredUsername, enteredAge);
+    props.onAddUser(enteredUsername, enteredAge)
     setEnteredUsername("");
     setEnteredAge("");
   }
