@@ -1,10 +1,23 @@
 import Button from "../ui/Button";
 import Card from "../ui/Card";
+import { useState } from "react";
 
 function AddUser(props) {
+  const [enteredUsername, setEnteredUsername] = useState("");
+  const [enteredage, setEnteredAge] = useState("");
+
   function addUser(event) {
     event.preventDefault();
     console.log("submitted");
+    console.log(enteredUsername, enteredage);
+  }
+
+  function usernameChangeHandler(event) {
+    setEnteredUsername(event.target.value);
+  }
+
+  function ageChangeHandler(event) {
+    setEnteredAge(event.target.value);
   }
 
   return (
@@ -24,6 +37,8 @@ function AddUser(props) {
             type="text"
             id="username"
             name="username"
+            required
+            onChange={usernameChangeHandler}
             className="text-base text-gray-600 focus:border-gray-600 focus:ring-gray-600 invalid:text-red-500 invalid:border-red-500 focus:invalid:border-red-500 focus:invalid:ring-red-500 invalid:bg-red-200"
           />
         </div>
@@ -38,7 +53,9 @@ function AddUser(props) {
           <input
             type="number"
             id="age"
+            onChange={ageChangeHandler}
             name="age"
+            required
             className="text-base text-gray-600 focus:border-gray-600 focus:ring-gray-600 invalid:text-red-500 invalid:border-red-500 focus:invalid:border-red-500 focus:invalid:ring-red-500 invalid:bg-red-200"
           />
         </div>
