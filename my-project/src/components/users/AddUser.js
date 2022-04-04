@@ -4,12 +4,21 @@ import { useState } from "react";
 
 function AddUser(props) {
   const [enteredUsername, setEnteredUsername] = useState("");
-  const [enteredage, setEnteredAge] = useState("");
+  const [enteredAge, setEnteredAge] = useState("");
 
   function addUser(event) {
     event.preventDefault();
+    if (enteredUsername.trim().length === 0 || !enteredAge.trim().length === 0) {
+        return
+    }
+    if (+enteredAge < 1) {
+        return
+    }
+    
     console.log("submitted");
-    console.log(enteredUsername, enteredage);
+    console.log(enteredUsername, enteredAge);
+    setEnteredUsername("");
+    setEnteredAge("");
   }
 
   function usernameChangeHandler(event) {
@@ -37,7 +46,7 @@ function AddUser(props) {
             type="text"
             id="username"
             name="username"
-            required
+            value={enteredUsername}
             onChange={usernameChangeHandler}
             className="text-base text-gray-600 focus:border-gray-600 focus:ring-gray-600 invalid:text-red-500 invalid:border-red-500 focus:invalid:border-red-500 focus:invalid:ring-red-500 invalid:bg-red-200"
           />
@@ -55,7 +64,7 @@ function AddUser(props) {
             id="age"
             onChange={ageChangeHandler}
             name="age"
-            required
+            value={enteredAge}
             className="text-base text-gray-600 focus:border-gray-600 focus:ring-gray-600 invalid:text-red-500 invalid:border-red-500 focus:invalid:border-red-500 focus:invalid:ring-red-500 invalid:bg-red-200"
           />
         </div>
