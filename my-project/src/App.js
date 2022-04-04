@@ -13,9 +13,9 @@ export default function App() {
   }
 
   return (
-    <div className="">
+    <>
       <AddUser onAddUser={getUser} />
       <UsersList users={usersList} />
-    </div>
+    </>
   );
 }
