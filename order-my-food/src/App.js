@@ -5,7 +5,7 @@ export default function App() {
   return (
     <div>
       <Header />
-      <main>
+      <main className="bg-black/60">
         <Meals />
       </main>
     </div>

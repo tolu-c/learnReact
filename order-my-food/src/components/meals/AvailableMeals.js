@@ -1,3 +1,6 @@
+import Card from "../ui/Card";
+import MealItem from "./MealItem/MealItem";
+
 const DUMMY_MEALS = [
   {
     id: "m1",
@@ -26,11 +29,20 @@ const DUMMY_MEALS = [
 ];
 
 function AvailableMeals() {
-  const mealsList = DUMMY_MEALS.map((meal) => <li>{meal.name}</li>);
+  const mealsList = DUMMY_MEALS.map((meal) => (
+    <MealItem
+      key={meal.id}
+      name={meal.name}
+      description={meal.description}
+      price={meal.price}
+    />
+  ));
 
   return (
     <section className="w-[90%] max-w-2xl my-8 mx-auto animate-meals">
-      <ul className="m-0 p-0 list-none">{mealsList}</ul>
+      <Card>
+        <ul className="m-0 p-0 list-none">{mealsList}</ul>
+      </Card>
     </section>
   );
 }
