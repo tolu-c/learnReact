@@ -2,7 +2,7 @@ import Input from "../../ui/Input";
 
 function MealItemForm(props) {
   return (
-    <form className="">
+    <form className="mr-2 flex items-center gap-2">
       <Input label='Amount' input={{
         id: 'amount',
         type: 'number',
@@ -11,7 +11,7 @@ function MealItemForm(props) {
         step: '1',
         defaultValue: '1'
       }} />
-      <button>add</button>
+      <button className='bg-orange-700 text-white capitalize font-semibold p-2 px-3'>add</button>
     </form>
   );
 }
