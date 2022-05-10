@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function DemoOutput(props) {
-  return (
-    <p>{props.show ? 'this is new' : ''}</p>
-  )
+  return <p>{props.show ? "this is new" : ""}</p>;
 }
 
-export default React.memo(DemoOutput)
+export default React.memo(DemoOutput);
